@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js</title>
+</head>
+
+<body>
+    <h2 id="title">자바스크립트 가지고 놀기기</h2>
+    <input type="text" id="my-input"/>
+    <button id="my-btn">버튼</button>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $('#my-btn').on('click', function(){
+            // input에서 값 가져오기
+            var inputText = $('#my-input').val();
+
+            // h2 제목 바꾸기 + 스타일 적용
+            $('#title').text(inputText).css({
+                'color': 'pink',
+                'font-size': '40px'
+            });
+
+
+        });
+    });
+</script>
+</html>

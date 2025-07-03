@@ -33,11 +33,19 @@
         width: 500px;
     }
 </style>
-<body style="position: relative;">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $('#kko-btn').on('click', function(){
+            alert('카카오버튼클릭')
+        })
+    })
+</script>
+body style="position: relative;">
 
 
     <h2>카카오 로그인 버튼</h2>
-    <button class="kko-btn">
+    <button class="kko-btn" id="kko-btn">
         <img src="https://cdn-icons-png.flaticon.com/512/2111/2111683.png" alt="">
         <span>1초만에 카카오로 시작하기기</span>
     </button>
