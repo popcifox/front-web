@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 기능</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <style>
+        body {
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            font-size: 18px;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        canvas {
+            background-color: #f0f0f0;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>안녕하세요!</h1>
+        <p id="message">버튼을 눌러보세요.</p>
+        <button id="changeTextBtn" class="btn btn-primary">클릭!</button>
+        <canvas id="fractalTree" width="600" height="500"></canvas>
+    </div>
+
+    <script>
+        // 버튼, 문단, 캔버스 요소를 가져옵니다.
+        const changeTextBtn = document.getElementById('changeTextBtn');
+        const message = document.getElementById('message');
+        const canvas = document.getElementById('fractalTree');
+        const ctx = canvas.getContext('2d');
+        const width = canvas.width;
+        const height = canvas.height;
+
+        // 프랙탈 트리를 그리는 함수
+        function drawTree(x1, y1, angle, depth) {
+            if (depth === 0) return;
+
+            const x2 = x1 + (Math.cos(angle * Math.PI / 180) * depth * 10);
+            const y2 = y1 + (Math.sin(angle * Math.PI / 180) * depth * 10);
+
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.strokeStyle = 'hsl(' + (depth * 10) + ', 100%, 50%)';
+            ctx.lineWidth = depth;
+            ctx.stroke();
+
+            setTimeout(() => {
+                drawTree(x2, y2, angle - 20, depth - 1);
+                drawTree(x2, y2, angle + 20, depth - 1);
+            }, 500);
+        }
+
+        // 버튼에 클릭 이벤트 리스너를 추가합니다.
+        changeTextBtn.addEventListener('click', function() {
+            // 문단의 텍스트를 변경합니다.
+            message.textContent = '버튼이 눌렸습니다! 🎉';
+            
+            // 캔버스를 초기화하고 프랙탈 트리 애니메이션을 시작합니다.
+            ctx.clearRect(0, 0, width, height);
+            drawTree(width / 2, height - 50, -90, 9);
+        });
+    </script>
+</body>
+</html>

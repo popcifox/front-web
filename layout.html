@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    
+</head>
+<style>
+    .kko-btn{
+        width: 300px;
+        height: 50px;
+        background-color: #ffdc00;
+        border: 1px solid #dedede;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #202020;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+    }
+
+    .kko-btn > img {
+        width: 26px;
+        margin-right: 10px;
+    }
+
+    .kko-btn:hover {
+        background-color: #f0cf00;
+        width: 500px;
+    }
+</style>
+<body style="position: relative;">
+
+
+    <h2>카카오 로그인 버튼</h2>
+    <button class="kko-btn">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111683.png" alt="">
+        <span>1초만에 카카오로 시작하기기</span>
+    </button>
+    <h2>flex</h2>
+    <div>
+        <div style="width: 300px;height: 200px; color: white;background-color: blue;
+        display: flex; flex-direction: row; justify-content: center; align-items: center;">
+            <span style="margin-top: 60px;">login1</span>
+            <span>login2</span>
+            <span>login3</span>
+        </div>
+    </div>
+
+    <h2>position</h2>
+    <div style="width:200px;height:200px;background:greenyellow; position: relative;">
+        <div style="width:100px;height:100px;background: blueviolet;"></div>
+        <div style="width:80px;height:80px;background: blue; position: absolute; top:0 ; left: 0;"></div>
+     </div>
+    
+    <div style="width: 300px; height: 150px; background-color: #bababa;position:relative">
+        <div style="width: 50px; height: 50px; background-color: black; position:absolute; top:0; right:0; ">
+        </div>
+    </div>
+</body>
+</html>

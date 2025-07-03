@@ -1,0 +1,30 @@
+.my-box{
+    width: 300;
+    height: 60px;
+    background-color: blue;
+    margin-bottom: 10px;
+}
+
+.round{
+    background-color: aquamarine;
+    border-radius: 20px;
+}
+
+#one-box{
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    margin-bottom: 16px;
+}
+
+div{
+    width: 100px;
+    color: brown;
+}
+
+.some-box > span{
+    background-color: yellow;
+}
+.some-box .y-box{
+    background-color: yellow;
+}
