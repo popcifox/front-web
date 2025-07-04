@@ -5,8 +5,9 @@ $(document).ready(function(){
     //삭제 기능
     $(document).on('click','.del-btn',function(){
        var result = confirm('정말 삭제하겠습니까?')
+       
        if(result){
-        $(this).closest('tr').remove();
+            $(this).closest('tr').remove();
         }
     });
  
